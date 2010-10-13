@@ -1,0 +1,14 @@
+#content
+  - @institutions.each do|item|
+    %h2
+    %a{ :href=> item.url}
+      =item.name
+    %table{:table=>"resources"}
+      - item.resources.each do|resource|
+        %tr
+          %th=resource.name
+          %td{:class=>'resource'}
+            - resource.reserves.each do|resv|
+              %span{:class=> resv.available ? 'available' : 'unavailable',
+                    :style=> "width: #{(resv.to.to_f - resv.from.to_f)/24*100}%" }
+                %span= "#{resv.from}-#{resv.to}"

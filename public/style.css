@@ -1,0 +1,19 @@
+td.resource span{
+    display: inline-block;
+    height: 20px;
+}
+
+span.available{
+    background-color:green;
+}
+
+td.resource {
+    position:relative;
+    height:20px;
+    width:800px;
+}
+
+
+span.unavailable{
+    background-color:red;
+}
