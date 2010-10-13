@@ -4,6 +4,11 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 
+unless defined? require_relative
+  def require_relative(*args)
+    require(*args)
+  end
+end
 require_relative 'model'
 require_relative 'crowler'
 
