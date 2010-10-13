@@ -1,6 +1,7 @@
 # -*- mode:ruby; coding:utf-8 -*-
 require 'open-uri'
 require 'nokogiri'
+require 'date'
 require_relative 'model'
 
 class Crowler
@@ -32,17 +33,16 @@ class Crowler
     "http://www.suisin.city.nagoya.jp/system/institution/index.cgi?action=inst_view&inst_key=#{key}"
   end
 
-  def find_by_date(year, month, day)
-    date = Date.new(year,month,day)
+  def find_by_date(date)
     Keys.map do|iname, key|
-      doc = Nokogiri::HTML(open(url(key, year, month, day)))
+      doc = Nokogiri::HTML(open(url(key, date.year, date.month, date.day)))
       resources = doc.css('table.empty04 tr')[2..-1].map do|elem|
         name = elem.css('th').text
 
         x,y,z = elem.css('td img')
         reserves = [ Reserve.new(date,"9","12.5" , x['src'] == 'img/mark01.gif'),
-                     Reserve.new(date,"13","16.5", x['src'] == 'img/mark01.gif'),
-                     Reserve.new(date,"17","21"  , x['src'] == 'img/mark01.gif') ]
+                     Reserve.new(date,"13","16.5", y['src'] == 'img/mark01.gif'),
+                     Reserve.new(date,"17","21"  , z['src'] == 'img/mark01.gif') ]
         Resource.new name, reserves
       end
       Institution.new iname, view(key), resources

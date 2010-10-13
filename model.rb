@@ -8,7 +8,7 @@
 Reserve = Struct.new 'Reserve', :date, :from, :to, :available
 
 # リソース
-Resource = Struct.new 'Resource', :name, :capacity, :reverves
+Resource = Struct.new 'Resource', :name, :reserves
 
 # 施設
 Institution = Struct.new 'Institution', :name, :url, :resources

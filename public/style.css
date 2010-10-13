@@ -1,19 +1,20 @@
-td.resource span{
-    display: inline-block;
-    height: 20px;
+table.resources{
+    border-spacing:5px 5px;
 }
 
-span.available{
-    background-color:green;
+td {
+    text-align:center;
 }
-
 td.resource {
-    position:relative;
-    height:20px;
-    width:800px;
+    width:100px;
+    padding:5px;
+    text-align:center;
 }
 
+.available{
+    background-color: #7fff7f;
+}
 
-span.unavailable{
-    background-color:red;
+.unavailable{
+    background-color:#ff7f7f;
 }
