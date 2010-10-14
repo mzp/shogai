@@ -1,0 +1,16 @@
+- @institutions.each do|item|
+  %h2
+    %a{ :href=> item.url}
+      =item.name
+  %table{:class=>"resources"}
+    %tr
+      %td
+      %td 9:00〜12:30
+      %td 13:00〜16:30
+      %td 17:00〜21:00
+    - item.resources.each do|resource|
+      %tr
+        %th=resource.name
+        - resource.reserves.each do|resv|
+          %td{:class=> resv.available ? 'available resource' : 'unavailable resource'}
+            #{resv.available ? '○' : '×'}

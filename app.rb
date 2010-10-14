@@ -20,7 +20,13 @@ get '/' do
 end
 
 get '/search' do
-  @date = Date.new params[:year].to_i,params[:month].to_i, params[:day].to_i
-  @institutions = Crowler.new.find_by_date @date
+  @date = Date.new(*params[:date].split("/",3).map{|x| x.to_i})
+  @title = @date.strftime("%Y/%m/%dの空き状況")
   haml :search
+end
+
+get '/result' do
+  @date = Date.new(*params[:date].split("/",3).map{|x| x.to_i})
+  @institutions = Crowler.new.find_by_date @date
+  haml :result, :layout=>false
 end

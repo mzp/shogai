@@ -1,25 +1,7 @@
-#content
-  %form{:action=>'/search', :method=>'GET'}
-    %p
-      %input{:name=>'year',:value=>@date.year}年
-      %input{:name=>'month',:value=>@date.month}月
-      %input{:name=>'day',:value=>@date.day}日
-    %p
-      %input{:type=>'submit', :value=>'再検索'}
-
-  - @institutions.each do|item|
-    %h2
-    %a{ :href=> item.url}
-      =item.name
-    %table{:class=>"resources"}
-      %tr
-        %td
-        %td 9:00〜12:30
-        %td 13:00〜16:30
-        %td 17:00〜21:00
-      - item.resources.each do|resource|
-        %tr
-          %th=resource.name
-          - resource.reserves.each do|resv|
-            %td{:class=> resv.available ? 'available resource' : 'unavailable resource'}
-              #{resv.available ? '○' : '×'}
+%script{:src=>"/search.js", :type=>"text/javascript"}
+%form{:action=>'/search', :method=>'GET'}
+  %p
+    %input{:name=>'date',:class=>'date',:value=> @date.strftime("%Y/%m/%d")}
+    %input{:type=>'submit', :value=>'再検索'}
+#result
+  読み込み中...

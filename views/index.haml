@@ -1,8 +1,8 @@
 %p
   %form{:action=>'/search', :method=>'GET'}
     %p
-      %input{:name=>'year'}年
-      %input{:name=>'month'}月
-      %input{:name=>'day'}日
-    %p
+      日付:
+      %input{:name=>'date',:class=>'date'}
       %input{:type=>'submit',:value=>'検索'}
+
+  %h2 使い方

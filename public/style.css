@@ -1,20 +1,52 @@
-table.resources{
-    border-spacing:5px 5px;
+body {
+  color: #333;
+  background-color: #ddd;
 }
 
-td {
-    text-align:center;
+.content {
+  width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #999;
+  background-color: #fff;
+  -moz-border-radius: 15px 15px 15px 15px;
+  -webkit-border-radius: 15px 15px 15px 15px;
+  border-radius: 15px 15px 15px 15px;
 }
-td.resource {
-    width:100px;
-    padding:5px;
+
+h1 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #bbb;
+}
+
+h2 {
+  font-size: 1.0em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+
+p.about, p.setting {
+  font-size: 0.8em;
+}
+div.ad {
+  margin: 10px;
+}
+
+.main {
+  margin: 20px;
+}
+
+table {
     text-align:center;
 }
 
-.available{
+td{
+    width:180px;
+}
+td.available{
     background-color: #7fff7f;
 }
-
-.unavailable{
+td.unavailable{
     background-color:#ff7f7f;
 }
