@@ -1,8 +1,22 @@
-%p
-  %form{:action=>'/search', :method=>'GET'}
-    %p
-      日付:
-      %input{:name=>'date',:class=>'date'}
-      %input{:type=>'submit',:value=>'検索'}
+%form{:action=>'/search', :method=>'GET'}
+  %p
+    日付:
+    %input{:name=>'date',:class=>'date'}
+    %input{:type=>'submit',:value=>'検索'}
 
-  %h2 使い方
+%h2 使い方
+%p
+  日付を入力し検索すると、
+  %a{:href=>"http://www.suisin.city.nagoya.jp/system/institution/index.cgi?action=inst_list"}名古屋市の生涯学習センター
+  の施設の空き状況を表示します。
+
+%p
+  予約の申し込み等は各施設に直接お願いします。
+
+%h2 おすすめ
+%iframe{:src=>"http://rcm-jp.amazon.co.jp/e/cm?t=mzp-22&o=9&p=48&l=st1&mode=books-jp&search=Scala&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr", :marginwidth=>"0", :marginheight=>"0", :width=>"728", :height=>"90", :border=>"0", :frameborder=>"0", :style=>"border:none;", :scrolling=>"no"}
+
+%h2 要望等
+%p
+  %a{:href=>"http://twitter.com/mzp"}@mzp
+  までお願いします。
